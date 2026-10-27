@@ -7,6 +7,7 @@
 - GitHub Actions는 **GitHub 호스팅 러너만** 사용합니다. self-hosted runner는 쓰지 않습니다(공개 저장소에서 포크 PR이 내부망 러너를 실행하는 위험 차단).
 - 테스트베드 접근(내부망, 자격증명)은 GitHub에 두지 않습니다. 배포는 GitLab이 담당합니다.
 - 워크플로 권한은 최소로 둡니다(`permissions:`를 job마다 명시).
+- `main` 보호 규칙과 포크 PR 승인 정책은 `hack/apply-ruleset.sh`로 적용합니다(재실행 가능).
 
 ## 2. GitHub CI (이 저장소)
 

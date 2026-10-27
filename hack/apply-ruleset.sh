@@ -8,6 +8,8 @@
 
 # Apply the main branch protection ruleset and Actions fork-PR policy.
 # Idempotent: updates the ruleset if it already exists.
+# Org owners may bypass the rules only when merging a pull request (never by direct push),
+# so a single maintainer can merge until a second reviewer joins each team.
 # Requirements: gh logged in as an org owner; the repository must be public
 # (or the org on a plan that supports rulesets for private repositories).
 #
@@ -23,7 +25,9 @@ ruleset=$(cat <<JSON
   "target": "branch",
   "enforcement": "active",
   "conditions": { "ref_name": { "include": ["~DEFAULT_BRANCH"], "exclude": [] } },
-  "bypass_actors": [],
+  "bypass_actors": [
+    { "actor_id": 1, "actor_type": "OrganizationAdmin", "bypass_mode": "pull_request" }
+  ],
   "rules": [
     { "type": "deletion" },
     { "type": "non_fast_forward" },

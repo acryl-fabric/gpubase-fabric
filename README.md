@@ -204,10 +204,11 @@ Development toolchains differ per component; see each component README.
 This repository is the **open-source Core** of JONATHAN GPUBASE Fabric: topology awareness,
 control interfaces and basic traffic control, released under MPL-2.0.
 
-**Large-scale cluster operations, advanced policy management, integrated visualization and
-commercial technical support** are provided by **[JONATHAN GPUBASE](TODO_JONATHAN_URL)**, ACRYL's
+**Large-scale cluster operations, advanced policy management, integrated visualization, operations
+automation and commercial technical support** are provided by **[JONATHAN GPUBASE](TODO_JONATHAN_URL)**, ACRYL's
 commercial AI infrastructure platform. JONATHAN GPUBASE builds on this Core only through the
-public interfaces in [`api/`](api/README.md); the Core never depends on it.
+public interfaces in [`api/`](api/README.md) and installs as a separate release on top of the Core
+chart; the Core never depends on it and is fully usable on its own.
 
 - How to use the Core with JONATHAN GPUBASE: [Integration guide](docs/guides/jonathan-gpubase-integration.md)
 - Where the line between Core and Extension is drawn: [CORE_EXTENSION.md](docs/governance/CORE_EXTENSION.md)

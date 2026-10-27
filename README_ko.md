@@ -54,7 +54,7 @@ helm install gpubase-fabric oci://ghcr.io/acryl-fabric/charts/gpubase-fabric \
 ## 오픈 코어와 상용 제품
 
 이 저장소는 오픈소스 Core(토폴로지 인식, 제어 인터페이스, 기본 트래픽 제어)입니다.
-대규모 클러스터 운영, 고급 정책 관리, 통합 시각화, 상용 기술 지원은
+대규모 클러스터 운영, 고급 정책 관리, 통합 시각화, 운영 자동화, 상용 기술 지원은
 **[JONATHAN GPUBASE](TODO_JONATHAN_URL)**에서 제공합니다.
 연계 방법은 [JONATHAN GPUBASE 연계 활용 가이드](docs/guides/jonathan-gpubase-integration.md)를 참고하세요.
 

@@ -46,8 +46,10 @@ the file and line, why it matters, and a concrete suggestion. Write review comme
    privileged containers, rollback path, and backward compatibility of `api/` (`v1alpha1` may
    change but must be called out).
 4. **Core–Extension boundary (경계 위반)**: Any reference to the commercial Extension, internal
-   GitLab, customer environments, or commercial-only features (large-scale cluster operations,
-   advanced policy management, integrated visualization). No `if enterprise`-style branches.
+   GitLab, customer environments, or commercial-only features listed in the Extension column of
+   `docs/governance/CORE_EXTENSION.md` §2 (e.g. multi-cluster operations, automatic policy tuning,
+   multi-layer integrated visualization, fleet-level operations automation). Basic functions and
+   every planned public deliverable must stay in Core. No `if enterprise`-style branches.
    Extension points must go through `api/` plugin SPI. **Flag every violation as blocking.**
 5. **Component contract (컴포넌트 계약)**: README sections (개요 / 담당 기관 / 개발 연차 /
    계획서상 산출물명 / 상태 / 빌드·실행 / 라이선스), Makefile `build`/`test`, `tests/`. For

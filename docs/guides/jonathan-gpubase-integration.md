@@ -6,7 +6,8 @@
 ## 1. 개요
 
 - **JONATHAN GPUBASE Fabric (이 저장소)**: 오픈소스 Core. 토폴로지 인식, 제어 인터페이스, 기본 트래픽 제어
-- **JONATHAN GPUBASE**: ㈜아크릴의 상용 AI 인프라 관리 플랫폼. 대규모 클러스터 운영, 고급 정책 관리, 통합 시각화, 상용 기술 지원
+- **JONATHAN GPUBASE**: ㈜아크릴의 상용 AI 인프라 관리 플랫폼. 대규모 클러스터 운영, 고급 정책 관리, 통합 시각화, 운영 자동화, 상용 기술 지원
+- 경계: [CORE_EXTENSION.md](../governance/CORE_EXTENSION.md)
 - 제품 정보: [JONATHAN GPUBASE](TODO_JONATHAN_URL)
 
 ## 2. 어떤 구성을 선택할까
@@ -22,6 +23,13 @@
 TODO(1차년도 말): `deploy/gpubase-fabric` values 예시, 사전 요구사항(SONiC 스위치 gNMI 활성화, DRA 지원 Kubernetes, DCGM).
 
 ## 4. JONATHAN GPUBASE와 함께 쓰기
+
+Extension은 Core 차트를 바꾸지 않고 **별도 릴리스로 얹습니다** ([CORE_EXTENSION.md §4](../governance/CORE_EXTENSION.md)).
+
+```bash
+helm install gpubase-fabric oci://ghcr.io/acryl-fabric/charts/gpubase-fabric -n gpubase-fabric   # Core
+helm install gpubase-ext <JONATHAN GPUBASE 레지스트리>/jonathan-gpubase-fabric-ext -n gpubase-fabric   # Extension (상용)
+```
 
 TODO(2차년도):
 - 버전 호환 표 (Core 버전 ↔ JONATHAN GPUBASE 버전)

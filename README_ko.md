@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/logo/logo_acryl.png" alt="ACRYL" height="72" /></p>
+<p align="center"><img src="docs/logo/logo_acryl.png" alt="ACRYL" height="44" /></p>
 
 <h1 align="center">JONATHAN GPUBASE Fabric</h1>
 
@@ -72,13 +72,5 @@ GPU 클러스터 네트워크 패브릭 시스템 및 최적화 기술 개발).
 ---
 
 <p align="center">
-  <img src="docs/logo/logo_acryl.png" alt="ACRYL" height="64" hspace="14" />
-  <img src="docs/logo/logo_yonsei.png" alt="연세대학교" height="64" hspace="14" />
-  <img src="docs/logo/logo_skku.png" alt="성균관대학교" height="64" hspace="14" />
-  <img src="docs/logo/logo_ajou.png" alt="아주대학교" height="64" hspace="14" />
-  <img src="docs/logo/logo_mangoboost.png" alt="망고부스트" height="64" hspace="14" />
-</p>
-<p align="center">
-  <img src="docs/logo/logo_msit.png" alt="과학기술정보통신부" height="40" hspace="14" />
-  <img src="docs/logo/logo_iitp.png" alt="정보통신기획평가원" height="40" hspace="14" />
+  <img src="docs/images/consortium.png" alt="Consortium: ACRYL, Yonsei University, Sungkyunkwan University, Ajou University, MangoBoost. Supported by MSIT and IITP." width="100%" />
 </p>

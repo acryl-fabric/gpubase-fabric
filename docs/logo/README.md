@@ -1,19 +1,24 @@
 # Logos
 
-| File | Organization | Role |
+Logos are trademarks of their respective owners and are **not** covered by the MPL-2.0 license of
+this repository (see [TRADEMARKS.md](../../TRADEMARKS.md)). They are used only to credit
+participation and funding.
+
+| File | Organization | Source |
 |---|---|---|
-| `logo_acryl.png` | ㈜아크릴 (ACRYL Inc.) | Lead organization · maintainer |
-| `logo_yonsei.png` | 연세대학교 산학협력단 | Consortium member |
-| `logo_skku.png` | 성균관대학교 산학협력단 | Consortium member |
-| `logo_ajou.png` | 아주대학교 산학협력단 | Consortium member |
-| `logo_mangoboost.png` | 망고부스트코리아(주) | Consortium member |
-| `logo_iitp.png` | 정보통신기획평가원 (IITP) | Funding agency |
-| `logo_msit.png` | 과학기술정보통신부 (MSIT) | Funding ministry |
+| `logo_acryl.png` | ㈜아크릴 (ACRYL Inc.) | Official website (acryl.ai), header logo |
+| `logo_yonsei.png` | 연세대학교 | Wikimedia Commons, "Yonsei University logotype.png" (public domain) |
+| `logo_skku.svg` | 성균관대학교 | Wikimedia Commons, "Sungkyunkwan University - logotype (ko+en).svg" (public domain) |
+| `logo_ajou.png` | 아주대학교 | Official UI download (ajou.ac.kr, 대학상징 > UI), emblem color version |
+| `logo_mangoboost.svg` | 망고부스트코리아(주) | Official website (mangoboost.io), header logo |
+| `logo_msit.svg` / `logo_msit_ko.svg` | 과학기술정보통신부 (MSIT) | Wikimedia Commons, official MSIT logo (English / Korean, horizontal) |
+| `logo_iitp.svg` | 정보통신기획평가원 (IITP) | Official website (iitp.kr), header logo |
 
-> **TODO**: the current files are low-resolution (~150 px) interim crops taken from the
-> consortium figure of the R&D plan. Replace each with the organization's official logo
-> file (PNG with transparent background, height ≥ 300 px) **using the same file name**
-> so the README links keep working. Each organization should confirm usage of its logo.
+The README shows all logos as one banner, [`docs/images/consortium.png`](../images/consortium.png),
+so that they stay readable in GitHub dark mode. After replacing a logo file, regenerate it:
 
-Logos are trademarks of their respective owners and are **not** covered by the MPL-2.0
-license of this repository (see [TRADEMARKS.md](../../TRADEMARKS.md)).
+```bash
+hack/diagrams/consortium.sh    # needs google-chrome or chromium
+```
+
+If an organization provides an updated official logo file, replace the file **with the same name**.

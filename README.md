@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.acryl.ai/"><img src="docs/logo/logo_acryl.png" alt="ACRYL" height="72" /></a>
+  <a href="https://www.acryl.ai/"><img src="docs/logo/logo_acryl.png" alt="ACRYL" height="44" /></a>
 </p>
 
 <h1 align="center">JONATHAN GPUBASE Fabric</h1>
@@ -225,11 +225,11 @@ chart; the Core never depends on it and is fully usable on its own.
 
 | Organization | Role | Layer |
 |---|---|---|
-| **ACRYL Inc.** | Lead organization · maintainer | Fabric control & operations, RDMA traffic optimization, field test, integration |
-| **Yonsei University** | Consortium member | AI data processing acceleration (DPU offloading) |
-| **Sungkyunkwan University** | Consortium member | Security |
-| **Ajou University** | Consortium member | Observability, workload placement, transfer path, GPU-native RDMA |
-| **MangoBoost** | Consortium member | DPU congestion control, field test |
+| [**ACRYL Inc.**](https://www.acryl.ai/) | Lead organization · maintainer | Fabric control & operations, RDMA traffic optimization, field test, integration |
+| [**Yonsei University**](https://www.yonsei.ac.kr/) | Consortium member | AI data processing acceleration (DPU offloading) |
+| [**Sungkyunkwan University**](https://www.skku.edu/) | Consortium member | Security |
+| [**Ajou University**](https://www.ajou.ac.kr/) | Consortium member | Observability, workload placement, transfer path, GPU-native RDMA |
+| [**MangoBoost**](https://www.mangoboost.io/) | Consortium member | DPU congestion control, field test |
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to contribute.
 
@@ -251,13 +251,5 @@ This work was supported by [_Institute of Information & Communications Technolog
 ---
 
 <p align="center">
-  <a href="https://www.acryl.ai/"><img src="docs/logo/logo_acryl.png" alt="ACRYL" height="64" hspace="14" /></a>
-  <a href="https://www.yonsei.ac.kr/"><img src="docs/logo/logo_yonsei.png" alt="Yonsei University" height="64" hspace="14" /></a>
-  <a href="https://www.skku.edu/"><img src="docs/logo/logo_skku.png" alt="Sungkyunkwan University" height="64" hspace="14" /></a>
-  <a href="https://www.ajou.ac.kr/"><img src="docs/logo/logo_ajou.png" alt="Ajou University" height="64" hspace="14" /></a>
-  <a href="https://www.mangoboost.io/"><img src="docs/logo/logo_mangoboost.png" alt="MangoBoost" height="64" hspace="14" /></a>
-</p>
-<p align="center">
-  <a href="https://www.msit.go.kr/"><img src="docs/logo/logo_msit.png" alt="Ministry of Science and ICT" height="40" hspace="14" /></a>
-  <a href="https://www.iitp.kr/"><img src="docs/logo/logo_iitp.png" alt="IITP" height="40" hspace="14" /></a>
+  <img src="docs/images/consortium.png" alt="Consortium: ACRYL, Yonsei University, Sungkyunkwan University, Ajou University, MangoBoost. Supported by MSIT and IITP." width="100%" />
 </p>

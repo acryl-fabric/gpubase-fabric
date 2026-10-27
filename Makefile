@@ -37,3 +37,4 @@ lint-charts:
 diagrams:
 	python3 hack/diagrams/arch.py
 	python3 hack/diagrams/workflow.py
+	hack/diagrams/consortium.sh

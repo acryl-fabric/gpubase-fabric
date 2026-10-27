@@ -12,6 +12,6 @@ set -euo pipefail
 chrome="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
 "$chrome" --headless=new --disable-gpu --no-sandbox --hide-scrollbars \
   --force-device-scale-factor=2 --default-background-color=00000000 \
-  --window-size=1180,300 --screenshot="$PWD/docs/images/consortium.png" \
+  --window-size=1180,272 --screenshot="$PWD/docs/images/consortium.png" \
   "file://$PWD/hack/diagrams/consortium.html" 2>/dev/null
 echo "wrote docs/images/consortium.png"

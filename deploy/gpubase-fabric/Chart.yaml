@@ -1,0 +1,28 @@
+apiVersion: v2
+name: gpubase-fabric
+description: JONATHAN GPUBASE Fabric — open-core Ethernet/RoCEv2 GPU cluster network fabric manager (umbrella chart)
+type: application
+# Overwritten from the git tag by .github/workflows/release.yml.
+version: 0.0.0
+appVersion: "0.0.0"
+home: https://github.com/acryl-fabric/gpubase-fabric
+sources:
+  - https://github.com/acryl-fabric/gpubase-fabric
+keywords: [gpu-cluster, rdma, rocev2, sonic, kubernetes, network-fabric]
+maintainers:
+  - name: ACRYL Inc.
+    url: https://www.acryl.ai/
+# Core components only (docs/governance/CORE_EXTENSION.md, item b).
+dependencies:
+  - name: switch-manager
+    version: 0.0.0
+    repository: file://../../fabric-manager/switch-manager/chart
+    condition: switch-manager.enabled
+  - name: node-resource-manager
+    version: 0.0.0
+    repository: file://../../fabric-manager/node-resource-manager/chart
+    condition: node-resource-manager.enabled
+  - name: dashboard
+    version: 0.0.0
+    repository: file://../../fabric-manager/dashboard/chart
+    condition: dashboard.enabled

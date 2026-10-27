@@ -1,0 +1,8 @@
+.git
+.github
+docs
+research
+**/bin
+**/tests
+**/chart
+**/*.md

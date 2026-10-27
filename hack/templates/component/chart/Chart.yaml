@@ -1,0 +1,11 @@
+apiVersion: v2
+name: __NAME__
+description: __SUMMARY__
+type: application
+version: 0.0.0
+appVersion: "0.0.0"
+home: https://github.com/acryl-fabric/gpubase-fabric
+sources:
+  - https://github.com/acryl-fabric/gpubase-fabric/tree/main/__PATH__
+annotations:
+  gpubase.acryl.ai/layer: __LAYER__

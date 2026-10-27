@@ -1,0 +1,14 @@
+# Umbrella values. Each key matches a component (sub-chart) name.
+# Do not put real cluster addresses or credentials here; use a private values file
+# (e.g. values-<site>.private.yaml, ignored by git).
+
+global: {}
+
+switch-manager:
+  enabled: true
+
+node-resource-manager:
+  enabled: true
+
+dashboard:
+  enabled: true

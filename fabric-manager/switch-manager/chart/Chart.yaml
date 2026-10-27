@@ -1,0 +1,11 @@
+apiVersion: v2
+name: switch-manager
+description: SONiC 기반 범용 이더넷 스위치를 gNMI/gNOI 표준 인터페이스로 제어·관제하는 엔진
+type: application
+version: 0.0.0
+appVersion: "0.0.0"
+home: https://github.com/acryl-fabric/gpubase-fabric
+sources:
+  - https://github.com/acryl-fabric/gpubase-fabric/tree/main/fabric-manager/switch-manager
+annotations:
+  gpubase.acryl.ai/layer: fabric-manager

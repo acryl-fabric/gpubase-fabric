@@ -1,0 +1,23 @@
+# Image naming follows docs/governance/NAMING.md.
+image:
+  repository: ghcr.io/acryl-fabric/gpubase-fabric/switch-manager
+  # Defaults to the chart appVersion when empty.
+  tag: ""
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "8080"
+  prometheus.io/path: /metrics

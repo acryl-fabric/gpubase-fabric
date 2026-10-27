@@ -1,0 +1,11 @@
+apiVersion: v2
+name: dashboard
+description: 패브릭 상태를 보여주는 통합 운영 대시보드 프로토타입 (기본 관제 화면)
+type: application
+version: 0.0.0
+appVersion: "0.0.0"
+home: https://github.com/acryl-fabric/gpubase-fabric
+sources:
+  - https://github.com/acryl-fabric/gpubase-fabric/tree/main/fabric-manager/dashboard
+annotations:
+  gpubase.acryl.ai/layer: fabric-manager

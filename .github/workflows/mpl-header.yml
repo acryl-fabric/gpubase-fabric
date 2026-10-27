@@ -1,0 +1,22 @@
+name: mpl-header
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  mpl-header:
+    name: mpl-header (warning only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          hack/check-mpl-header.sh "$(git merge-base "$BASE" "$HEAD")" \
+            || echo "::warning::MPL-2.0 header missing in research/ (required by the component contract)"

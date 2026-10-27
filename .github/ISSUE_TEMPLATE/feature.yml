@@ -1,0 +1,34 @@
+name: 기능 제안 (Feature request)
+description: 새 기능이나 개선을 제안합니다.
+title: "[Feature] "
+labels: ["type/feature", "status/triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 해결하려는 문제
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 제안 내용
+      description: 동작, 인터페이스(api/ 변경 여부), 대상 컴포넌트
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 검토한 대안
+  - type: dropdown
+    id: year
+    attributes:
+      label: 목표 연차
+      options: ["Y1 (2026)", "Y2 (2027)", "Y3 (2028)", "미정"]
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Core 범위 확인
+      options:
+        - label: 이 기능은 Core 범위(토폴로지 인식, 제어 인터페이스, 기본 트래픽 제어 등)에 속합니다. (docs/governance/CORE_EXTENSION.md)
+          required: true

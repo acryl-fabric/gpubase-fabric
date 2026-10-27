@@ -1,0 +1,46 @@
+# CODEOWNERS — the last matching pattern wins.
+# Teams need write access to the repository for their review to count.
+# Org teams: fabric-acryl, fabric-yonsei, fabric-skku, fabric-ajou, fabric-mangoboost
+
+# Root, shared and governance files
+*                                             @acryl-fabric/fabric-acryl
+/api/                                         @acryl-fabric/fabric-acryl
+/deploy/                                      @acryl-fabric/fabric-acryl
+/docs/                                        @acryl-fabric/fabric-acryl
+/hack/                                        @acryl-fabric/fabric-acryl
+/libs/                                        @acryl-fabric/fabric-acryl
+/.github/                                     @acryl-fabric/fabric-acryl
+
+# Network fabric control & operations layer — ACRYL
+/fabric-manager/                              @acryl-fabric/fabric-acryl
+
+# RDMA traffic optimization layer
+/traffic-optimization/                        @acryl-fabric/fabric-acryl
+/traffic-optimization/adaptive-routing/       @acryl-fabric/fabric-acryl
+/traffic-optimization/multipath-transport/    @acryl-fabric/fabric-acryl
+/traffic-optimization/qos-isolation/          @acryl-fabric/fabric-acryl
+/traffic-optimization/observability/          @acryl-fabric/fabric-ajou
+/traffic-optimization/workload-placement/     @acryl-fabric/fabric-ajou
+/traffic-optimization/path-selection/         @acryl-fabric/fabric-ajou
+/traffic-optimization/gpu-native-rdma/        @acryl-fabric/fabric-ajou
+/traffic-optimization/dpu-congestion-control/ @acryl-fabric/fabric-mangoboost
+
+# AI data processing acceleration layer — Yonsei
+/data-acceleration/                           @acryl-fabric/fabric-yonsei
+
+# Security layer — SKKU
+/security/                                    @acryl-fabric/fabric-skku
+
+# Field test
+/field-test/                                  @acryl-fabric/fabric-acryl
+/field-test/testbed/                          @acryl-fabric/fabric-acryl
+/field-test/scenarios/                        @acryl-fabric/fabric-mangoboost
+/field-test/reports/                          @acryl-fabric/fabric-mangoboost @acryl-fabric/fabric-acryl
+
+# Research: owned by ACRYL by default; organizations add their own experiment directories below.
+/research/                                    @acryl-fabric/fabric-acryl
+
+# Governance and contracts always need ACRYL review (keep last)
+/LICENSE                                      @acryl-fabric/fabric-acryl
+/CLAUDE.md                                    @acryl-fabric/fabric-acryl
+/.github/CODEOWNERS                           @acryl-fabric/fabric-acryl

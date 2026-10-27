@@ -1,0 +1,89 @@
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+      components: ${{ steps.v.outputs.components }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: v
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          version="${TAG#v}"
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]] || { echo "::error::tag $TAG is not semver"; exit 1; }
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "components=$(bash -c 'source hack/lib.sh; list_deployable_components' | jq -R . | jq -cs .)" >> "$GITHUB_OUTPUT"
+
+  images:
+    name: image ${{ matrix.component }}
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        component: ${{ fromJSON(needs.prepare.outputs.components) }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: meta
+        env:
+          COMPONENT: ${{ matrix.component }}
+        run: echo "name=$(basename "$COMPONENT")" >> "$GITHUB_OUTPUT"
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: ${{ matrix.component }}/Dockerfile
+          push: true
+          build-args: VERSION=${{ needs.prepare.outputs.version }}
+          tags: |
+            ghcr.io/acryl-fabric/gpubase-fabric/${{ steps.meta.outputs.name }}:${{ needs.prepare.outputs.version }}
+            ghcr.io/acryl-fabric/gpubase-fabric/${{ steps.meta.outputs.name }}:${{ github.sha }}
+          labels: |
+            org.opencontainers.image.revision=${{ github.sha }}
+
+  chart:
+    name: helm chart
+    needs: [prepare, images]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: azure/setup-helm@v5
+      - name: set chart versions
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+        run: |
+          # Placeholder version 0.0.0 in the umbrella and sub-charts becomes the release version.
+          for chart in deploy/gpubase-fabric/Chart.yaml $(bash -c 'source hack/lib.sh; for c in $(list_deployable_components); do echo "$c/chart/Chart.yaml"; done'); do
+            sed -i "s/0\.0\.0/${VERSION}/g" "$chart"
+          done
+      - name: package and push
+        env:
+          VERSION: ${{ needs.prepare.outputs.version }}
+          ACTOR: ${{ github.actor }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          helm dependency update deploy/gpubase-fabric
+          helm lint deploy/gpubase-fabric
+          helm package deploy/gpubase-fabric -d dist
+          echo "$TOKEN" | helm registry login ghcr.io -u "$ACTOR" --password-stdin
+          helm push "dist/gpubase-fabric-${VERSION}.tgz" oci://ghcr.io/acryl-fabric/charts

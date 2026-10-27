@@ -1,0 +1,65 @@
+name: claude-review
+
+# 1st-stage LLM review (advisory). Not a required check: an API outage must not block merges.
+# Runs only for PRs from branches of this repository; fork PRs are skipped so that
+# secrets are never exposed to untrusted code.
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+permissions: {}
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  claude-review:
+    name: claude-review
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - id: key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::ANTHROPIC_API_KEY is not configured; skipping LLM review."
+          fi
+      - if: steps.key.outputs.present == 'true'
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - if: steps.key.outputs.present == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Use the workflow token (contents: read, pull-requests: write) instead of the GitHub App/OIDC flow.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            Review this pull request using the criteria in section 3 of CLAUDE.md
+            (design intent, performance impact, operational risk, Core–Extension boundary,
+            component contract, NAMING.md compliance, secrets/internal exposure, license policy).
+
+            - Read CLAUDE.md and the relevant docs/governance/*.md files first.
+            - Use `gh pr diff` and `gh pr view` to inspect the change.
+            - Post specific findings as inline comments with
+              mcp__github_inline_comment__create_inline_comment.
+            - Post one summary comment with `gh pr comment`, starting with "🤖 LLM 1차 리뷰",
+              listing blocking issues (경계 위반, 시크릿·내부 정보) first.
+            - Write in Korean. Do not approve or request changes; comment only.
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Read,Glob,Grep"

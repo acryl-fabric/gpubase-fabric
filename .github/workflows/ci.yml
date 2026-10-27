@@ -1,0 +1,101 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    name: detect changed components
+    runs-on: ubuntu-latest
+    outputs:
+      components: ${{ steps.detect.outputs.components }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - id: detect
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_AFTER: ${{ github.sha }}
+        run: |
+          if [ "$EVENT" = "pull_request" ]; then
+            base="$(git merge-base "$PR_BASE" "$PR_HEAD")"; head="$PR_HEAD"
+          else
+            base="$PUSH_BEFORE"; head="$PUSH_AFTER"
+          fi
+          if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            # First push or unknown base: test everything.
+            components="$(bash -c 'source hack/lib.sh; list_components' | jq -R . | jq -cs .)"
+          else
+            components="$(hack/changed-components.sh "$base" "$head")"
+          fi
+          echo "components=$components" >> "$GITHUB_OUTPUT"
+          echo "changed components: $components"
+
+  contract:
+    name: component contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: azure/setup-helm@v5
+      - run: hack/verify-contract.sh
+      - run: make -C deploy lint
+
+  build-test:
+    name: build & test (${{ matrix.component }})
+    needs: changes
+    if: needs.changes.outputs.components != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        component: ${{ fromJSON(needs.changes.outputs.components) }}
+    steps:
+      - uses: actions/checkout@v7
+      # Toolchains are installed per component, based on the files it contains.
+      - if: hashFiles(format('{0}/**/*.go', matrix.component), format('{0}/**/go.mod', matrix.component)) != ''
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: ${{ hashFiles(format('{0}/go.mod', matrix.component)) != '' && format('{0}/go.mod', matrix.component) || 'go.mod' }}
+      - if: hashFiles(format('{0}/**/pyproject.toml', matrix.component), format('{0}/**/requirements*.txt', matrix.component)) != ''
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - if: hashFiles(format('{0}/**/package.json', matrix.component)) != ''
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - if: hashFiles(format('{0}/chart/Chart.yaml', matrix.component)) != ''
+        uses: azure/setup-helm@v5
+      - name: make build
+        run: make -C "${{ matrix.component }}" build
+      - name: make test
+        run: make -C "${{ matrix.component }}" test
+
+  # Single required status check for branch protection.
+  ci:
+    name: ci
+    needs: [changes, contract, build-test]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          CHANGES: ${{ needs.changes.result }}
+          CONTRACT: ${{ needs.contract.result }}
+          BUILD: ${{ needs.build-test.result }}
+        run: |
+          echo "changes=$CHANGES contract=$CONTRACT build-test=$BUILD"
+          [ "$CHANGES" = "success" ] && [ "$CONTRACT" = "success" ] && \
+            { [ "$BUILD" = "success" ] || [ "$BUILD" = "skipped" ]; }

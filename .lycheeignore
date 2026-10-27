@@ -1,0 +1,6 @@
+# Placeholder until the JONATHAN GPUBASE product URL is fixed.
+TODO_JONATHAN_URL
+# Private while the repository is private; GHCR / OCI references are not web pages.
+^https://github\.com/acryl-fabric/
+^oci://
+ghcr\.io

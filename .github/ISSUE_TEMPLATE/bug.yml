@@ -1,0 +1,58 @@
+name: 버그 보고 (Bug report)
+description: 동작 오류나 예상과 다른 결과를 알려주세요.
+title: "[Bug] "
+labels: ["type/bug", "status/triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        내부 IP, 호스트명, 계정, 토큰은 지우거나 `<PLACEHOLDER>`로 바꿔서 올려주세요.
+  - type: dropdown
+    id: component
+    attributes:
+      label: 컴포넌트
+      options:
+        - api
+        - fabric-manager/switch-manager
+        - fabric-manager/node-resource-manager
+        - fabric-manager/topology-engine
+        - fabric-manager/virtual-fabric
+        - fabric-manager/dashboard
+        - traffic-optimization/*
+        - data-acceleration/*
+        - security/*
+        - field-test/*
+        - deploy (Helm)
+        - CI / 기타
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 현상
+      description: 무엇이 잘못되었나요?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 재현 방법
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 동작
+  - type: textarea
+    id: env
+    attributes:
+      label: 환경
+      description: 버전(커밋), Kubernetes 버전, 스위치 NOS(SONiC 버전), NIC/DPU, GPU 등
+  - type: textarea
+    id: logs
+    attributes:
+      label: 로그
+      render: shell

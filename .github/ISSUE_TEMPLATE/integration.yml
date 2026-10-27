@@ -1,0 +1,37 @@
+name: 기관 간 연동 이슈 (Cross-organization integration)
+description: 컴포넌트·기관 사이 인터페이스(api/) 협의나 통합 문제를 다룹니다.
+title: "[Integration] "
+labels: ["type/integration", "status/triage"]
+body:
+  - type: input
+    id: components
+    attributes:
+      label: 관련 컴포넌트
+      placeholder: "예: traffic-optimization/observability ↔ fabric-manager/topology-engine"
+    validations:
+      required: true
+  - type: dropdown
+    id: orgs
+    attributes:
+      label: 관련 기관
+      multiple: true
+      options: ["아크릴", "연세대", "성균관대", "아주대", "망고부스트"]
+    validations:
+      required: true
+  - type: textarea
+    id: interface
+    attributes:
+      label: 인터페이스 내용
+      description: 주고받는 데이터, API(proto/CRD/플러그인 SPI), 호출 방향, 버전
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: 문제 또는 합의가 필요한 사항
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 필요 시점

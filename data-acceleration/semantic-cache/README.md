@@ -10,6 +10,8 @@
 | 계획서상 산출물명 (Deliverable) | Semantic 캐시 공유 모듈 소스코드 (3차), DPU 중심 캐시 관리 및 재분배 모듈 소스코드 (3차) |
 | 상태 (Status) | 3차년도 예정 |
 
+> 📌 이 폴더 구성은 연구개발계획서 기준 **잠정안**입니다. 첫 코드 반입 시 담당 기관이 같은 계층 안에서 합치기·나누기·이름 바꾸기를 할 수 있습니다. → [기존 코드 반입 가이드](../../docs/guides/importing-existing-code.md)
+
 ## 개요 (Overview)
 
 RDMA 기반 Semantic 캐시 공유와 DPU 중심 캐시 관리·재분배 모듈

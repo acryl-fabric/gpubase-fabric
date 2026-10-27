@@ -11,6 +11,9 @@ CI의 `contract` 단계(`hack/verify-contract.sh`)가 자동으로 검사합니�
 - `libs/<언어>/<이름>/`도 각각 컴포넌트(공용 라이브러리)입니다.
 - 새 컴포넌트는 `hack/new-component.sh`로 만들고 `.github/CODEOWNERS`에 추가합니다.
   템플릿은 `--type basic`(모든 언어), `go-service`, `python-service`가 있습니다.
+- 미리 만들어 둔 컴포넌트 폴더는 계획서 기준 **잠정안**입니다. 첫 코드 반입 때 담당 기관이 **같은 계층 안에서**
+  합치기·나누기·이름 바꾸기를 할 수 있습니다. 기준은 실행·배포 단위이며, CODEOWNERS·산출물 색인·계층 README를 함께 고칩니다.
+  절차: [기존 코드 반입 가이드](../guides/importing-existing-code.md)
 
 ## 2. 모든 컴포넌트 필수 항목
 

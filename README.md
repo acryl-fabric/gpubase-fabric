@@ -108,7 +108,7 @@ gpubase-fabric
 ### Where to start
 
 - **Install the fabric manager**: [Quick Start](#quick-start) and [`deploy/`](deploy/README.md)
-- **Build a new component**: [`hack/new-component.sh`](hack/new-component.sh) and the [component contract](docs/governance/COMPONENT_CONTRACT.md)
+- **Build a new component or bring existing code**: [`hack/new-component.sh`](hack/new-component.sh), the [component contract](docs/governance/COMPONENT_CONTRACT.md) and the [import guide](docs/guides/importing-existing-code.md)
 - **Integrate or extend** (plugins, other projects, commercial extension): [`api/`](api/README.md) and the [JONATHAN GPUBASE integration guide](docs/guides/jonathan-gpubase-integration.md)
 - **Yearly public deliverables**: [`docs/deliverables/`](docs/deliverables/2026/README.md)
 

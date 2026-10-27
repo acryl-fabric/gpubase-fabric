@@ -10,6 +10,8 @@
 | 계획서상 산출물명 (Deliverable) | GPU-native RDMA 통합 관리 시스템 및 라이브러리 (3차) |
 | 상태 (Status) | 3차년도 예정 |
 
+> 📌 이 폴더 구성은 연구개발계획서 기준 **잠정안**입니다. 첫 코드 반입 시 담당 기관이 같은 계층 안에서 합치기·나누기·이름 바꾸기를 할 수 있습니다. → [기존 코드 반입 가이드](../../docs/guides/importing-existing-code.md)
+
 ## 개요 (Overview)
 
 GPU 주도 RDMA 통신을 위한 다중 앱 관리·CPU-GPU 하이브리드 QoS 통합 관리 시스템 및 라이브러리

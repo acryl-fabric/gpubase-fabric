@@ -10,6 +10,8 @@
 | 계획서상 산출물명 (Deliverable) | Prefix 재사용 기반 데이터 경로 오프로딩 모듈 소스코드 (2차) |
 | 상태 (Status) | 2차년도 예정 |
 
+> 📌 이 폴더 구성은 연구개발계획서 기준 **잠정안**입니다. 첫 코드 반입 시 담당 기관이 같은 계층 안에서 합치기·나누기·이름 바꾸기를 할 수 있습니다. → [기존 코드 반입 가이드](../../docs/guides/importing-existing-code.md)
+
 ## 개요 (Overview)
 
 episodic 메타데이터 기반 KV prefix 재사용·연산 생략을 DPU로 오프로딩하는 모듈

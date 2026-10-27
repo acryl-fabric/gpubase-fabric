@@ -48,6 +48,8 @@ JONATHAN GPUBASE Fabric은 ㈜아크릴이 주관하고 연세대·성균관대�
 
 ## 5. 컴포넌트 계약
 
+- 기관에서 개발하던 코드를 가져올 때는 [기존 코드 반입 가이드](docs/guides/importing-existing-code.md)를 따릅니다. 미리 만든 컴포넌트 폴더는 잠정안이라 같은 계층 안에서 합치거나 나눌 수 있습니다.
+
 - 새 컴포넌트: `hack/new-component.sh --help`처럼 스크립트를 사용하고 `.github/CODEOWNERS`에 추가합니다.
 - 모든 컴포넌트는 `README.md`, `Makefile`(`build`, `test`), `tests/`가 필요합니다. 배포 대상은 `Dockerfile`, `image` 타깃, `chart/`도 필요합니다.
 - PR 전에 로컬에서 확인합니다.

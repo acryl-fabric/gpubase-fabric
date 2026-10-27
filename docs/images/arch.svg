@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="874" viewBox="0 0 1280 874" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker></defs>
+<rect x="0" y="0" width="1280" height="874" rx="16" fill="#ffffff" stroke="none" stroke-width="1.5"/>
+<text x="640.0" y="40" font-size="24" fill="#14213d" font-weight="bold" text-anchor="middle">JONATHAN GPUBASE Fabric — Architecture</text>
+<text x="640.0" y="64" font-size="13" fill="#5b6474" font-weight="normal" text-anchor="middle">Open-core Ethernet / RoCEv2 GPU cluster network fabric · vendor-neutral, built on SONiC and Kubernetes standard interfaces</text>
+<rect x="40" y="84" width="1200" height="62" rx="10" fill="#f7f8fb" stroke="#9aa3b5" stroke-width="1.5" stroke-dasharray="7 5"/>
+<text x="60" y="108" font-size="14" fill="#4a5568" font-weight="bold" text-anchor="start">JONATHAN GPUBASE  ·  Commercial Extension (separate product, not in this repository)</text>
+<text x="60" y="130" font-size="12.5" fill="#5b6474" font-weight="normal" text-anchor="start">Large-scale cluster operations  ·  Advanced policy management  ·  Integrated visualization  ·  Commercial support</text>
+<line x1="640.0" y1="147" x2="640.0" y2="168" stroke="#4a5568" stroke-width="2" marker-end="url(#ar)"/>
+<text x="652.0" y="163" font-size="11.5" fill="#4a5568" font-weight="normal" text-anchor="start">depends on api/ only (one-way)</text>
+<rect x="40" y="174" width="1200" height="44" rx="10" fill="#14213d" stroke="none" stroke-width="1.5"/>
+<text x="640.0" y="202" font-size="15" fill="#ffffff" font-weight="bold" text-anchor="middle">api/  —  Open Control API (gRPC)  ·  CRDs (fabric.gpubase.acryl.ai)  ·  Plugin SPI</text>
+<rect x="40" y="232" width="1200" height="480" rx="10" fill="#eef3ff" stroke="#2B59C3" stroke-width="2"/>
+<text x="60" y="256" font-size="14" fill="#2B59C3" font-weight="bold" text-anchor="start">Open-source Core  (this repository · MPL-2.0)</text>
+<text x="60" y="290" font-size="15" fill="#14213d" font-weight="bold" text-anchor="start">Network Fabric Control &amp; Ops</text>
+<text x="420" y="290" font-size="12" fill="#2B59C3" font-weight="normal" text-anchor="end">fabric-manager/</text>
+<rect x="60" y="302" width="360" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="60" y="302" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="76" y="321" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">switch-manager</text>
+<text x="76" y="338" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">SONiC switch control · gNMI/gNOI</text>
+<text x="410" y="321" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1–Y3</text>
+<rect x="60" y="352" width="360" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="60" y="352" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="76" y="371" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">node-resource-manager</text>
+<text x="76" y="388" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">K8s DRA · DCGM node resources</text>
+<text x="410" y="371" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1–Y2</text>
+<rect x="60" y="402" width="360" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="60" y="402" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="76" y="421" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">topology-engine</text>
+<text x="76" y="438" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">SDN topology awareness</text>
+<text x="410" y="421" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y2</text>
+<rect x="60" y="452" width="360" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="60" y="452" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="76" y="471" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">virtual-fabric</text>
+<text x="76" y="488" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">RoCEv2 fabric virtualization</text>
+<text x="410" y="471" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y2</text>
+<rect x="60" y="502" width="360" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="60" y="502" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="76" y="521" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">dashboard</text>
+<text x="76" y="538" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">Operations dashboard prototype</text>
+<text x="410" y="521" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1</text>
+<text x="60" y="576" font-size="15" fill="#14213d" font-weight="bold" text-anchor="start">Field Test</text>
+<text x="420" y="576" font-size="12" fill="#2B59C3" font-weight="normal" text-anchor="end">field-test/</text>
+<rect x="60" y="588" width="360" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="60" y="588" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="76" y="607" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">testbed</text>
+<text x="76" y="624" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">RoCEv2 GPU cluster scalability testbed</text>
+<text x="410" y="607" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1, Y3</text>
+<rect x="60" y="638" width="360" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="60" y="638" width="6" height="44" rx="3" fill="#B8930A"/>
+<text x="76" y="657" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">scenarios · reports</text>
+<text x="76" y="674" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">Validation scenarios · field reports</text>
+<text x="410" y="657" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y2–Y3</text>
+<text x="440" y="290" font-size="15" fill="#14213d" font-weight="bold" text-anchor="start">RDMA Traffic Optimization</text>
+<text x="830" y="290" font-size="12" fill="#2B59C3" font-weight="normal" text-anchor="end">traffic-optimization/</text>
+<rect x="440" y="302" width="390" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="440" y="302" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="456" y="321" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">adaptive-routing</text>
+<text x="456" y="338" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">SDN adaptive routing engine</text>
+<text x="820" y="321" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1–Y2</text>
+<rect x="440" y="352" width="390" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="440" y="352" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="456" y="371" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">multipath-transport</text>
+<text x="456" y="388" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">Proactive congestion · RDMA multipath</text>
+<text x="820" y="371" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y2–Y3</text>
+<rect x="440" y="402" width="390" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="440" y="402" width="6" height="44" rx="3" fill="#2B59C3"/>
+<text x="456" y="421" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">qos-isolation</text>
+<text x="456" y="438" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">RDMA resource isolation · QoS</text>
+<text x="820" y="421" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1–Y3</text>
+<rect x="440" y="452" width="390" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="440" y="452" width="6" height="44" rx="3" fill="#D9822B"/>
+<text x="456" y="471" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">observability</text>
+<text x="456" y="488" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">Network–PCIe observability · bottleneck</text>
+<text x="820" y="471" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1</text>
+<rect x="440" y="502" width="390" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="440" y="502" width="6" height="44" rx="3" fill="#D9822B"/>
+<text x="456" y="521" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">workload-placement</text>
+<text x="456" y="538" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">Topology-aware workload placement</text>
+<text x="820" y="521" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1</text>
+<rect x="440" y="552" width="390" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="440" y="552" width="6" height="44" rx="3" fill="#D9822B"/>
+<text x="456" y="571" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">path-selection</text>
+<text x="456" y="588" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">GDR / host-staged path selection</text>
+<text x="820" y="571" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y2</text>
+<rect x="440" y="602" width="390" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="440" y="602" width="6" height="44" rx="3" fill="#D9822B"/>
+<text x="456" y="621" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">gpu-native-rdma</text>
+<text x="456" y="638" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">GPU-native RDMA management</text>
+<text x="820" y="621" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y3</text>
+<rect x="440" y="652" width="390" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="440" y="652" width="6" height="44" rx="3" fill="#B8930A"/>
+<text x="456" y="671" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">dpu-congestion-control</text>
+<text x="456" y="688" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">DPU-based congestion control (PCC)</text>
+<text x="820" y="671" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y2–Y3</text>
+<text x="850" y="290" font-size="15" fill="#14213d" font-weight="bold" text-anchor="start">AI Data Acceleration</text>
+<text x="1220" y="290" font-size="12" fill="#2B59C3" font-weight="normal" text-anchor="end">data-acceleration/</text>
+<rect x="850" y="302" width="370" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="850" y="302" width="6" height="44" rx="3" fill="#7B3FA0"/>
+<text x="866" y="321" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">kv-skipping</text>
+<text x="866" y="338" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">DPU context-aware KV skipping</text>
+<text x="1210" y="321" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y2</text>
+<rect x="850" y="352" width="370" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="850" y="352" width="6" height="44" rx="3" fill="#7B3FA0"/>
+<text x="866" y="371" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">prefix-offload</text>
+<text x="866" y="388" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">Prefix-reuse datapath offload</text>
+<text x="1210" y="371" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y2</text>
+<rect x="850" y="402" width="370" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="850" y="402" width="6" height="44" rx="3" fill="#7B3FA0"/>
+<text x="866" y="421" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">vector-search</text>
+<text x="866" y="438" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">GPU–DPU vector search engine</text>
+<text x="1210" y="421" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y3</text>
+<rect x="850" y="452" width="370" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="850" y="452" width="6" height="44" rx="3" fill="#7B3FA0"/>
+<text x="866" y="471" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">semantic-cache</text>
+<text x="866" y="488" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">RDMA semantic cache sharing</text>
+<text x="1210" y="471" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y3</text>
+<text x="850" y="526" font-size="15" fill="#14213d" font-weight="bold" text-anchor="start">Security</text>
+<text x="1220" y="526" font-size="12" fill="#2B59C3" font-weight="normal" text-anchor="end">security/</text>
+<rect x="850" y="538" width="370" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="850" y="538" width="6" height="44" rx="3" fill="#1E8E5A"/>
+<text x="866" y="557" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">security-framework</text>
+<text x="866" y="574" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">K8s security analysis framework</text>
+<text x="1210" y="557" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1</text>
+<rect x="850" y="588" width="370" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="850" y="588" width="6" height="44" rx="3" fill="#1E8E5A"/>
+<text x="866" y="607" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">access-control</text>
+<text x="866" y="624" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">Multi-tenant RDMA access control</text>
+<text x="1210" y="607" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y3</text>
+<rect x="850" y="638" width="370" height="44" rx="7" fill="#ffffff" stroke="#d5dbe8" stroke-width="1"/>
+<rect x="850" y="638" width="6" height="44" rx="3" fill="#1E8E5A"/>
+<text x="866" y="657" font-size="13.5" fill="#14213d" font-weight="bold" text-anchor="start">security-monitoring</text>
+<text x="866" y="674" font-size="11.5" fill="#5b6474" font-weight="normal" text-anchor="start">Security monitoring · integrity</text>
+<text x="1210" y="657" font-size="11" fill="#8a93a3" font-weight="normal" text-anchor="end">Y3</text>
+<rect x="40" y="728" width="1200" height="80" rx="10" fill="#f7f8fb" stroke="#c3cad8" stroke-width="1.5"/>
+<text x="60" y="752" font-size="14" fill="#4a5568" font-weight="bold" text-anchor="start">Open standards &amp; hardware (vendor-neutral)</text>
+<rect x="60.0" y="764" width="185.0" height="32" rx="6" fill="#ffffff" stroke="#c3cad8" stroke-width="1"/>
+<text x="152.5" y="785" font-size="12" fill="#14213d" font-weight="normal" text-anchor="middle">Ethernet switch · SONiC</text>
+<rect x="255.0" y="764" width="185.0" height="32" rx="6" fill="#ffffff" stroke="#c3cad8" stroke-width="1"/>
+<text x="347.5" y="785" font-size="12" fill="#14213d" font-weight="normal" text-anchor="middle">gNMI / gNOI</text>
+<rect x="450.0" y="764" width="185.0" height="32" rx="6" fill="#ffffff" stroke="#c3cad8" stroke-width="1"/>
+<text x="542.5" y="785" font-size="12" fill="#14213d" font-weight="normal" text-anchor="middle">Kubernetes · DRA</text>
+<rect x="645.0" y="764" width="185.0" height="32" rx="6" fill="#ffffff" stroke="#c3cad8" stroke-width="1"/>
+<text x="737.5" y="785" font-size="12" fill="#14213d" font-weight="normal" text-anchor="middle">GPU node · DCGM</text>
+<rect x="840.0" y="764" width="185.0" height="32" rx="6" fill="#ffffff" stroke="#c3cad8" stroke-width="1"/>
+<text x="932.5" y="785" font-size="12" fill="#14213d" font-weight="normal" text-anchor="middle">RNIC · SuperNIC · DPU</text>
+<rect x="1035.0" y="764" width="185.0" height="32" rx="6" fill="#ffffff" stroke="#c3cad8" stroke-width="1"/>
+<text x="1127.5" y="785" font-size="12" fill="#14213d" font-weight="normal" text-anchor="middle">RoCEv2 · GPUDirect RDMA</text>
+<text x="60" y="840" font-size="12" fill="#4a5568" font-weight="bold" text-anchor="start">Owner:</text>
+<rect x="114" y="829" width="14" height="14" rx="3" fill="#2B59C3"/>
+<text x="134" y="840" font-size="12" fill="#4a5568" font-weight="normal" text-anchor="start">ACRYL</text>
+<rect x="196.0" y="829" width="14" height="14" rx="3" fill="#7B3FA0"/>
+<text x="216.0" y="840" font-size="12" fill="#4a5568" font-weight="normal" text-anchor="start">Yonsei</text>
+<rect x="285.6" y="829" width="14" height="14" rx="3" fill="#1E8E5A"/>
+<text x="305.6" y="840" font-size="12" fill="#4a5568" font-weight="normal" text-anchor="start">SKKU</text>
+<rect x="360.0" y="829" width="14" height="14" rx="3" fill="#D9822B"/>
+<text x="380.0" y="840" font-size="12" fill="#4a5568" font-weight="normal" text-anchor="start">Ajou</text>
+<rect x="434.4" y="829" width="14" height="14" rx="3" fill="#B8930A"/>
+<text x="454.4" y="840" font-size="12" fill="#4a5568" font-weight="normal" text-anchor="start">MangoBoost</text>
+<text x="1220" y="840" font-size="12" fill="#8a93a3" font-weight="normal" text-anchor="end">Y1 = 2026 · Y2 = 2027 · Y3 = 2028 (planned year)</text>
+</svg>

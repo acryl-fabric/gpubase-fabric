@@ -4,3 +4,5 @@ TODO_JONATHAN_URL
 ^https://github\.com/acryl-fabric/
 ^oci://
 ghcr\.io
+# Korean institution sites that block or time out from GitHub-hosted runners (links verified manually).
+^https://www\.ajou\.ac\.kr/

@@ -8,6 +8,7 @@ JONATHAN GPUBASE Fabric은 ㈜아크릴이 주관하고 연세대·성균관대�
 - 저장소 구조와 규칙: [README](README.md), [컴포넌트 계약](docs/governance/COMPONENT_CONTRACT.md), [NAMING](docs/governance/NAMING.md)
 - **Extension(상용) 코드 반입 금지**: [CORE_EXTENSION.md](docs/governance/CORE_EXTENSION.md)를 먼저 읽어주세요.
 - 의존성 라이선스: [LICENSE_POLICY.md](docs/governance/LICENSE_POLICY.md)
+- 역할과 의사결정: [GOVERNANCE.md](GOVERNANCE.md), [MAINTAINERS.md](MAINTAINERS.md). 모든 참여자는 [행동 강령](CODE_OF_CONDUCT.md)을 따릅니다.
 
 ## 2. 브랜치
 

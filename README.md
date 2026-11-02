@@ -231,7 +231,7 @@ chart; the Core never depends on it and is fully usable on its own.
 | [**Ajou University**](https://www.ajou.ac.kr/) | Consortium member | Observability, workload placement, transfer path, GPU-native RDMA |
 | [**MangoBoost**](https://www.mangoboost.io/) | Consortium member | DPU congestion control, field test |
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) to contribute.
+See [CONTRIBUTING.md](CONTRIBUTING.md) to contribute. Roles and decision-making are in [GOVERNANCE.md](GOVERNANCE.md) and [MAINTAINERS.md](MAINTAINERS.md); all participants follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

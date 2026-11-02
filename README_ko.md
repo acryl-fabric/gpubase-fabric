@@ -58,6 +58,12 @@ helm install gpubase-fabric oci://ghcr.io/acryl-fabric/charts/gpubase-fabric \
 **[JONATHAN GPUBASE](TODO_JONATHAN_URL)**에서 제공합니다.
 연계 방법은 [JONATHAN GPUBASE 연계 활용 가이드](docs/guides/jonathan-gpubase-integration.md)를 참고하세요.
 
+## 참여와 운영
+
+- 기여 절차: [CONTRIBUTING.md](CONTRIBUTING.md)
+- 역할과 의사결정: [GOVERNANCE.md](GOVERNANCE.md) · 메인테이너 명단: [MAINTAINERS.md](MAINTAINERS.md)
+- 모든 참여자는 [행동 강령](CODE_OF_CONDUCT.md)을 따릅니다.
+
 ## 라이선스 · 상표
 
 - 라이선스: [MPL-2.0](LICENSE) · [NOTICE](NOTICE)

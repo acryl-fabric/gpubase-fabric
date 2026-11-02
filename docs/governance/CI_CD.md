@@ -16,7 +16,7 @@
 | `ci.yml` | PR, `main` push | 변경 컴포넌트를 경로로 감지해 `make build test` 실행(컴포넌트 파일을 보고 Go·Python·Node·Helm 툴체인 자동 설치), 컴포넌트 계약 검사. 집계 job 이름 `ci` | **`ci`** |
 | `dco.yml` | PR | 모든 커밋의 `Signed-off-by`가 작성자와 일치하는지 확인 | **`dco`** |
 | `gitleaks.yml` | PR, `main` push | 시크릿 스캔 (gitleaks CLI) | **`gitleaks`** |
-| `claude-review.yml` | PR (같은 저장소 브랜치만) | LLM 1차 리뷰. [CLAUDE.md](../../CLAUDE.md) 기준으로 PR 코멘트 작성 | 아니요 (권고) |
+| `claude-review.yml` | PR (같은 저장소 브랜치만) | LLM 1차 리뷰. [CLAUDE.md](../../CLAUDE.md) 기준으로 PR 코멘트 작성. 인증은 시크릿 `CLAUDE_CODE_OAUTH_TOKEN`(Claude 구독, `claude setup-token`으로 발급)을 우선 쓰고, 없으면 `ANTHROPIC_API_KEY`(Console, 사용량 과금)를 씀. 둘 다 없으면 건너뜀 | 아니요 (권고) |
 | `mpl-header.yml` | PR | 새 소스 파일의 MPL-2.0 헤더 확인. 누락 시 경고만 | 아니요 |
 | `links.yml` | Markdown 변경 PR, 매주 | 문서 링크 검사 | 아니요 |
 | `images.yml` | `main` push | 변경된 배포 대상 컴포넌트 이미지 GHCR 게시 (태그 `<sha>`, `main`) | — |
